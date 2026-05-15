@@ -1,0 +1,115 @@
+/* ==========================
+   CATEGORIES SECTION
+   ========================== */
+
+.categories {
+  background: var(--black);
+  padding: var(--space-2xl) 0 var(--space-xl);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.categories__header {
+  margin-bottom: var(--space-xl);
+}
+
+.categories__title {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--white);
+}
+
+.categories__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.category-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              background 0.4s ease,
+              border-color 0.4s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.category-card__image-container {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  transition: transform 0.4s ease;
+  overflow: hidden; /* Ensure image fits circle */
+}
+
+.category-card:hover .category-card__image-container {
+  transform: scale(1.1);
+}
+
+.category-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category-card__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.category-card__name {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--white);
+}
+
+.category-card__desc {
+  font-size: 15px;
+  color: var(--gray-400);
+  line-height: 1.5;
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+.category-card__explore {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent-blue);
+  transition: gap 0.2s ease;
+}
+
+.category-card:hover .category-card__explore {
+  gap: 10px;
+}
+
+@media (max-width: 1024px) {
+  .categories__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .categories__grid {
+    grid-template-columns: 1fr;
+  }
+}

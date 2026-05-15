@@ -90,6 +90,10 @@ const HeroPage = () => {
           <h1 className="hero__headline">{slide.headline}</h1>
           <p className="hero__subheadline">{slide.subheadline}</p>
           <p className="hero__description">{slide.description}</p>
+          <div className="hero__ctas" style={{ display: 'flex', gap: '16px', marginTop: '16px' }}>
+            <a href={slide.cta1.href} className="btn-primary hero__btn">{slide.cta1.label}</a>
+            <a href={slide.cta2.href} className="btn-glass hero__btn">{slide.cta2.label}</a>
+          </div>
         </div>
       </div>
 
